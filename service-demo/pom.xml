@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <!--基本信息-->
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <name>service-demo</name>
+    <description>Demo project for Spring Boot</description>
+
+    <groupId>com.lanyage.multimodule</groupId>
+    <artifactId>service-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--继承父工程-->
+    <parent>
+        <groupId>com.lanyage.multimodule</groupId>
+        <artifactId>parent-demo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!--依赖,被依赖的模块最好要干净-->
+    <dependencies>
+    </dependencies>
+
+    <!--被依赖的项目是不能有build标签的，因为被依赖的项目仅仅是提供库-->
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
+</project>

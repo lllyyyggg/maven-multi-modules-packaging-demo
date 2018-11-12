@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--基本信息-->
+    <description>maven 多模块项目构建</description>
+    <modelVersion>4.0.0</modelVersion>
+    <name>parent-demo</name>
+    <packaging>pom</packaging>
+
+    <!--项目说明-->
+    <groupId>com.lanyage.multimodule</groupId>
+    <artifactId>parent-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--继承说明-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!--声明子模块-->
+    <modules>
+        <module>service-demo</module>
+        <module>web-demo</module>
+    </modules>
+
+    <!--版本说明,在这里声明的依赖在子模块中也需要<dependencies/>引入,但是子模块中就不需要版本了。-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lanyage.multimodule</groupId>
+                <artifactId>service-demo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lanyage.multimodule</groupId>
+                <artifactId>web-demo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
